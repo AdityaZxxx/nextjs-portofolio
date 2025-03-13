@@ -2,6 +2,7 @@
 import blogPosts from "@/data/blog";
 import { motion } from "framer-motion";
 import Image from "next/image";
+import Link from "next/link";
 
 const Blog: React.FC = () => {
   return (
@@ -50,7 +51,12 @@ const Blog: React.FC = () => {
                   </span>
                   <h3 className="text-xl font-bold mb-2 mt-1">{post.title}</h3>
                   <p className="mb-4">{post.excerpt}</p>
-                  <button className="neo-button px-4 py-2">Read More</button>
+                  <Link
+                    href={`/blog/${post.id}`}
+                    className="neo-button px-4 py-2"
+                  >
+                    Read More
+                  </Link>
                 </div>
               </div>
             </motion.div>

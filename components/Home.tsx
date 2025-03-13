@@ -39,7 +39,7 @@ export const HomePage: React.FC = () => {
       />
 
       <motion.div
-        className="neo-square"
+        className="neo-square "
         style={{
           backgroundColor: "var(--secondary)",
           bottom: "20%",
@@ -62,7 +62,7 @@ export const HomePage: React.FC = () => {
         transition={{ delay: 1.0, duration: 0.5 }}
       />
 
-      <div className="max-w-4xl w-full">
+      <div className="max-w-4xl w-full md:pt-0 md:pb-10 mt-5 md:mt-0">
         <motion.div
           initial={{ y: 50, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}

@@ -37,7 +37,7 @@ const Contact: React.FC = () => {
           name: data.name,
           email: data.email,
           message: data.message,
-          to: "adityaofficial714@gmail.com",
+          to: process.env.NEXT_PUBLIC_EMAIL_USER,
         }),
       });
 
@@ -61,17 +61,17 @@ const Contact: React.FC = () => {
     {
       platform: "GitHub",
       link: "https://github.com/AdityaZxxx",
-      logo: <Github size={24} />,
+      logo: <Github />,
     },
     {
       platform: "X",
       link: "https://x.com/adxxya30",
-      logo: <Twitter size={24} />,
+      logo: <Twitter />,
     },
     {
       platform: "Instagram",
       link: "https://instagram.com/adxxya30",
-      logo: <Instagram size={24} />,
+      logo: <Instagram />,
     },
   ];
 
@@ -115,7 +115,7 @@ const Contact: React.FC = () => {
               <div className="pt-4">
                 <div className="flex space-x-4">
                   <h2>Social Links</h2>
-                  <div className="flex justify-center gap-4">
+                  <div className="flex justify-center gap-4 text-sm">
                     {SocialLink.map((social) => (
                       <a
                         key={social.platform}
@@ -199,7 +199,7 @@ const Contact: React.FC = () => {
               <button
                 type="submit"
                 className="neo-button px-6 py-3 mt-4 cursor-pointer"
-                style={{ backgroundColor: "#48dbfb" }}
+                style={{ backgroundColor: "#6a5acd" }}
                 disabled={isLoading}
               >
                 {isLoading ? "Sending..." : "Send Message"}
