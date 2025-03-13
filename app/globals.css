@@ -1,26 +1,234 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Base colors - vibrant neo-brutalism palette */
+  --primary: #ff5252; /* Vibrant red */
+  --secondary: #4ecca3; /* Bright teal */
+  --accent1: #ffce00; /* Bright yellow */
+  --accent2: #6a5acd; /* Slateblue */
+  --accent3: #ff6b6b; /* Coral pink */
+  --accent4: #48dbfb; /* Light blue */
+  --dark: #121212; /* Near black */
+  --light: #f0f0f0; /* Off white */
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+.dark {
+  --bg-main: var(--dark);
+  --text-main: var(--light);
+  --box-shadow-primary: 8px 8px 0px rgba(255, 82, 82, 0.9);
+  --box-shadow-secondary: 8px 8px 0px rgba(78, 204, 163, 0.9);
+  --box-shadow-accent1: 8px 8px 0px rgba(255, 206, 0, 0.9);
+  --box-shadow-accent2: 8px 8px 0px rgba(106, 90, 205, 0.9);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+.light {
+  --bg-main: var(--light);
+  --text-main: var(--dark);
+  --box-shadow-primary: 8px 8px 0px rgba(255, 82, 82, 0.9);
+  --box-shadow-secondary: 8px 8px 0px rgba(78, 204, 163, 0.9);
+  --box-shadow-accent1: 8px 8px 0px rgba(255, 206, 0, 0.9);
+  --box-shadow-accent2: 8px 8px 0px rgba(106, 90, 205, 0.9);
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--bg-main);
+  color: var(--text-main);
+  transition: background-color 0.3s ease, color 0.3s ease;
+  font-family: "Space Mono", monospace;
+}
+
+/* Neo-brutalist box styles with different color variations */
+.neo-brutalist-box {
+  border: 3px solid var(--text-main);
+  box-shadow: var(--box-shadow-primary);
+  transition: all 0.2s ease;
+  background-color: var(--bg-main);
+  position: relative;
+  overflow: hidden;
+}
+
+.neo-brutalist-box:hover {
+  transform: translate(-4px, -4px);
+  box-shadow: 12px 12px 0px rgba(255, 82, 82, 0.9);
+}
+
+.neo-brutalist-box-secondary {
+  border: 3px solid var(--text-main);
+  transition: all 0.2s ease;
+  position: relative;
+  overflow: hidden;
+  box-shadow: var(--box-shadow-secondary);
+}
+
+.neo-brutalist-box-secondary:hover {
+  box-shadow: 12px 12px 0px rgba(78, 204, 163, 0.9);
+}
+
+.neo-brutalist-box-accent1 {
+  border: 3px solid var(--text-main);
+  transition: all 0.2s ease;
+  position: relative;
+  overflow: hidden;
+  box-shadow: var(--box-shadow-accent1);
+}
+
+.neo-brutalist-box-accent1:hover {
+  box-shadow: 12px 12px 0px rgba(255, 206, 0, 0.9);
+}
+
+.neo-brutalist-box-accent2 {
+  border: 3px solid var(--text-main);
+  transition: all 0.2s ease;
+  position: relative;
+  overflow: hidden;
+  box-shadow: var(--box-shadow-accent2);
+}
+
+.neo-brutalist-box-accent2:hover {
+  box-shadow: 12px 12px 0px rgba(106, 90, 205, 0.9);
+}
+
+/* Button styles with different color variations */
+.neo-button {
+  border: 3px solid var(--text-main);
+  background-color: var(--primary);
+  color: white;
+  font-weight: bold;
+  box-shadow: 4px 4px 0px var(--text-main);
+  transition: all 0.2s ease;
+  text-transform: uppercase;
+  position: relative;
+  overflow: hidden;
+}
+
+.neo-button:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0px var(--text-main);
+}
+
+.neo-button:active {
+  transform: translate(0px, 0px);
+  box-shadow: 0px 0px 0px var(--text-main);
+}
+
+.neo-button-secondary {
+  background-color: var(--secondary);
+  color: var(--dark);
+}
+
+.neo-button-accent1 {
+  background-color: var(--accent1);
+  color: var(--dark);
+}
+
+.neo-button-accent2 {
+  background-color: var(--accent2);
+  color: white;
+}
+
+.neo-button-accent3 {
+  background-color: var(--accent3);
+  color: white;
+}
+
+.neo-button-accent4 {
+  background-color: var(--accent4);
+  color: var(--dark);
+}
+
+/* Navigation item styles */
+.nav-item {
+  position: relative;
+}
+
+.nav-item::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 3px;
+  bottom: 0;
+  left: 0;
+  background-color: var(--primary);
+  transition: width 0.3s ease;
+}
+
+.nav-item:hover::after {
+  width: 100%;
+}
+
+.active::after {
+  width: 100%;
+}
+
+/* Neo-brutalist decorative elements */
+.neo-circle {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 3px solid transparent;
+  position: absolute;
+}
+
+.neo-triangle {
+  width: 0;
+  height: 0;
+  border-left: 25px solid transparent;
+  border-right: 25px solid transparent;
+  border-bottom: 50px solid;
+  position: absolute;
+}
+
+.neo-square {
+  width: 40px;
+  height: 40px;
+  border: 3px solid transparent;
+  position: absolute;
+  transform: rotate(45deg);
+}
+
+/* Typographic elements with neo-brutalist style */
+.neo-heading {
+  transform: skew(-5deg);
+  display: inline-block;
+  padding: 5px 10px;
+  margin-bottom: 10px;
+}
+
+.neo-tag {
+  display: inline-block;
+  padding: 2px 8px;
+  border: 2px solid var(--text-main);
+  margin-right: 8px;
+  margin-bottom: 8px;
+  font-weight: bold;
+  transition: all 0.2s ease;
+}
+
+.neo-tag:hover {
+  transform: translateY(-2px);
+}
+
+/* Color highlight text blocks */
+.highlight-primary {
+  background-color: var(--primary);
+  color: white;
+  padding: 0 5px;
+}
+
+.highlight-secondary {
+  background-color: var(--secondary);
+  color: var(--dark);
+  padding: 0 5px;
+}
+
+.highlight-accent1 {
+  background-color: var(--accent1);
+  color: var(--dark);
+  padding: 0 5px;
+}
+
+.highlight-accent2 {
+  background-color: var(--accent2);
+  color: white;
+  padding: 0 5px;
 }
