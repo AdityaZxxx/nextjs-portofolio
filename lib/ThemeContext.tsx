@@ -16,10 +16,10 @@ interface ThemeProviderProps {
 }
 
 export const ThemeProvider: React.FC<ThemeProviderProps> = ({ children }) => {
-  const [theme, setTheme] = useState("light");
+  const [theme, setTheme] = useState("dark");
 
   useEffect(() => {
-    const savedTheme = localStorage.getItem("theme") || "light";
+    const savedTheme = localStorage.getItem("theme") || "dark";
     setTheme(savedTheme);
     document.body.className = savedTheme; // Set the body class
   }, []);
