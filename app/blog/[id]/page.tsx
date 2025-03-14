@@ -6,27 +6,19 @@ import Image from "next/image";
 import { useParams, useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 
-interface BlogPostProps {
-  params: {
-    id: string;
-  };
+interface BlogPost {
+  id: string;
+  title: string;
+  date: string;
+  image: string;
+  excerpt: string;
+  content?: string;
 }
 
-const SingleBlogPost: React.FC<BlogPostProps> = () => {
+const SingleBlogPost: React.FC = () => {
   const router = useRouter();
-  const Params = useParams();
-
-  const { id } = Params;
-
-  interface BlogPost {
-    id: string;
-    title: string;
-    date: string;
-    image: string;
-    excerpt: string;
-    content?: string;
-  }
-
+  const params = useParams();
+  const { id } = params;
   const [post, setPost] = useState<BlogPost | null>(null);
   const [isLoading, setIsLoading] = useState(true);
 
@@ -38,6 +30,7 @@ const SingleBlogPost: React.FC<BlogPostProps> = () => {
       }
 
       const foundPost = blogPosts.find((p) => p.id === id);
+
       if (foundPost) {
         setPost({ ...foundPost, id: foundPost.id.toString() });
       } else {

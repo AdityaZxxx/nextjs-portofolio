@@ -5,7 +5,7 @@ import { ReactNode } from "react";
 import "./globals.css";
 
 export const metadata = {
-  title: "Developer Portfolio - Neo Brutalism",
+  title: "Aditya Developer Portfolio - Neo Brutalism",
   description: "A portfolio showcasing my work as a software developer.",
 };
 
