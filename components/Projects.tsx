@@ -1,55 +1,21 @@
 "use client";
+import projects from "@/data/project";
 import { motion } from "framer-motion";
 import Image from "next/image";
 
 const Projects: React.FC = () => {
-  const projects = [
-    {
-      id: 1,
-      title: "E-Commerce Platform",
-      description:
-        "A full-stack e-commerce solution with payment integration and admin dashboard.",
-      tech: ["Next.js", "Node.js", "MongoDB", "Stripe"],
-      image: "/api/placeholder/500/300",
-    },
-    {
-      id: 2,
-      title: "Task Management App",
-      description:
-        "A collaborative task management tool with real-time updates and team features.",
-      tech: ["React", "Firebase", "Tailwind CSS"],
-      image: "/api/placeholder/500/300",
-    },
-    {
-      id: 3,
-      title: "Portfolio Website",
-      description:
-        "A modern portfolio website with neo-brutalist design elements.",
-      tech: ["Next.js", "Framer Motion", "Tailwind CSS"],
-      image: "/api/placeholder/500/300",
-    },
-    {
-      id: 4,
-      title: "Blog Website",
-      description:
-        "A blog website with neo-brutalist design elements and content management.",
-      tech: ["Next.js", "Sanity.io", "Tailwind CSS"],
-      image: "/api/placeholder/500/300",
-    },
-  ];
-
   return (
     <motion.section
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
-      className="min-h-screen py-20 px-6 md:px-12"
+      className="min-h-screen py-8 px-6 md:px-12"
     >
       <div className="max-w-6xl mx-auto">
         <motion.h2
           initial={{ y: -50, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
-          className="text-4xl font-bold mb-12 inline-block neo-brutalist-box py-2 px-4"
+          className="text-4xl font-bold mb-6 inline-block neo-brutalist-box py-2 px-4"
         >
           Projects
         </motion.h2>

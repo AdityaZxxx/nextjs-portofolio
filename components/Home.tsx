@@ -1,21 +1,11 @@
 "use client";
+
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import { techStack } from "../config/constants";
 
 export const HomePage: React.FC = () => {
-  const techStack = [
-    {
-      id: 1,
-      name: "React",
-    },
-    { id: 2, name: "Next.js" },
-    { id: 3, name: "Node.js" },
-    { id: 4, name: "TailwindCSS" },
-    { id: 5, name: "PostgreSQL" },
-    { id: 6, name: "Docker" },
-    { id: 7, name: "Git" },
-  ];
   const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(() => {
@@ -29,7 +19,6 @@ export const HomePage: React.FC = () => {
       exit={{ opacity: 0 }}
       className="min-h-screen flex flex-col justify-center items-center px-6 md:px-12 relative overflow-hidden"
     >
-      {/* Decorative elements */}
       <motion.div
         className="neo-circle"
         style={{ backgroundColor: "var(--accent1)", top: "15%", right: "5%" }}

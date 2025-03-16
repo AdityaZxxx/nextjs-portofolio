@@ -8,13 +8,13 @@ const About: React.FC = () => {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
-      className="min-h-screen py-20 px-6 md:px-12"
+      className="min-h-screen py-8 px-6 md:px-12"
     >
       <div className="max-w-4xl mx-auto ">
         <motion.h2
           initial={{ y: -50, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
-          className="text-4xl font-bold mb-12 inline-block neo-brutalist-box py-2 px-4"
+          className="text-4xl font-bold mb-6 inline-block neo-brutalist-box py-2 px-4"
         >
           About Me
         </motion.h2>

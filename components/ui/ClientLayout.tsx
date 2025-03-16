@@ -2,8 +2,8 @@
 
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
-import Footer from "./Footer";
-import Header from "./Header";
+import Footer from "../footer/Footer";
+import Header from "../header/Header";
 
 const ClientLayout: React.FC<{ children: React.ReactNode }> = ({
   children,

@@ -1,24 +1,26 @@
-import ClientLayout from "@/components/ClientLayout";
+import ClientLayout from "@/components/ui/ClientLayout";
 import MotionFrammerWrapper from "@/components/ui/MotionFrammerWrapper";
 import { ThemeProvider } from "@/lib/ThemeContext";
 import { ReactNode } from "react";
+import GreetingPage from "../components/ui/Greetings";
+import { GreetingProvider } from "../lib/GreetingContect";
 import "./globals.css";
 
-export const metadata = {
-  title: "Aditya Developer Portfolio - Neo Brutalism",
-  description: "A portfolio showcasing my work as a software developer.",
-};
+export { metadata } from "@/data/metadata";
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <html lang="en">
-      <body id="root" className="dark">
-        <ThemeProvider>
-          <MotionFrammerWrapper>
-            <ClientLayout>{children}</ClientLayout>
-          </MotionFrammerWrapper>
-        </ThemeProvider>
-      </body>
-    </html>
+    <GreetingProvider>
+      <html lang="en" suppressHydrationWarning>
+        <body id="root">
+          <GreetingPage />
+          <ThemeProvider>
+            <MotionFrammerWrapper>
+              <ClientLayout>{children}</ClientLayout>
+            </MotionFrammerWrapper>
+          </ThemeProvider>
+        </body>
+      </html>
+    </GreetingProvider>
   );
 }
